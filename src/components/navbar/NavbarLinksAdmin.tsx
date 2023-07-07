@@ -70,10 +70,10 @@ export default function HeaderLinks(props: {
         me="10px"
         borderRadius="30px"
       />
-      <SidebarResponsive routes={routes} />
-      <APIModal setApiKey={setApiKey} />
+      {/* <SidebarResponsive routes={routes} />
+      <APIModal setApiKey={setApiKey} /> */}
 
-      <Menu>
+      {/* <Menu>
         <MenuButton p="0px">
           <Icon
             mt="6px"
@@ -95,7 +95,7 @@ export default function HeaderLinks(props: {
           minW={{ base: 'unset' }}
           maxW={{ base: '360px', md: 'unset' }}
         >
-          {/* <Flex bgImage={navImage} borderRadius="16px" mb="28px" alt="" /> */}
+          <Flex bgImage={navImage} borderRadius="16px" mb="28px" alt="" />
           <Flex flexDirection="column">
             <Link
               isExternal
@@ -158,7 +158,7 @@ export default function HeaderLinks(props: {
             </Link>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
 
       <Button
         variant="no-hover"
@@ -178,7 +178,7 @@ export default function HeaderLinks(props: {
           as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
         />
       </Button>
-      <Menu>
+      {/* <Menu>
         <MenuButton p="0px" style={{ position: 'relative' }}>
           <Box
             _hover={{ cursor: 'pointer' }}
@@ -255,7 +255,7 @@ export default function HeaderLinks(props: {
             </MenuItem>
           </Flex>
         </MenuList>
-      </Menu>
+      </Menu> */}
     </Flex>
   );
 }

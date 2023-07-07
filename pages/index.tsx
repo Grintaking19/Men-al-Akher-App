@@ -18,6 +18,7 @@ import {
   Img,
   Input,
   Text,
+  Textarea,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -155,6 +156,13 @@ export default function Chat(props: { apiKeyApp: string }) {
     setInputCode(Event.target.value);
   };
 
+
+  const handleInputResize = (Event: any) => {
+    Event.target.style.height = 'auto';
+    Event.target.style.height = Event.target.scrollHeight + 'px';
+  }
+
+
   return (
     <Flex
       w="100%"
@@ -169,6 +177,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         left="50%"
         top="50%"
         transform={'translate(-50%, -50%)'}
+        zIndex="-1"
       />
       <Flex
         direction="column"
@@ -178,7 +187,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         maxW="1000px"
       >
         {/* Model Change */}
-        <Flex direction={'column'} w="100%" mb={outputCode ? '20px' : 'auto'}>
+        {/* <Flex direction={'column'} w="100%" mb={outputCode ? '20px' : 'auto'}>
           <Flex
             mx="auto"
             zIndex="2"
@@ -282,7 +291,7 @@ export default function Chat(props: { apiKeyApp: string }) {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-        </Flex>
+        </Flex> */}
         {/* Main Box */}
         <Flex
           direction="column"
@@ -291,7 +300,39 @@ export default function Chat(props: { apiKeyApp: string }) {
           display={outputCode ? 'flex' : 'none'}
           mb={'auto'}
         >
-          <Flex w="100%" align={'center'} mb="10px">
+          <Flex w="100%" align={''} mb="10px">
+            
+            <Flex
+              p="22px"
+              border="1px solid"
+              borderColor={borderColor}
+              borderRadius="14px"
+              w="934px"
+              zIndex={'2'}
+              justifyContent="right"
+            >
+              {/* <Icon
+                cursor="pointer"
+                as={MdEdit}
+                ms="auto"
+                width="20px"
+                height="20px"
+                color={gray}
+              /> */}
+              <Text
+                color={textColor}
+                fontWeight="600"
+                fontSize={{ base: 'sm', md: 'md' }}
+                lineHeight={{ base: '24px', md: '26px' }}
+                maxW="100%"
+                textAlign={"right"}
+                
+              >
+                {inputOnSubmit}
+              </Text>
+              
+            </Flex>
+
             <Flex
               borderRadius="full"
               justify="center"
@@ -303,6 +344,8 @@ export default function Chat(props: { apiKeyApp: string }) {
               h="40px"
               minH="40px"
               minW="40px"
+              marginTop="5px"
+              marginLeft={"7px"}
             >
               <Icon
                 as={MdPerson}
@@ -311,33 +354,9 @@ export default function Chat(props: { apiKeyApp: string }) {
                 color={brandColor}
               />
             </Flex>
-            <Flex
-              p="22px"
-              border="1px solid"
-              borderColor={borderColor}
-              borderRadius="14px"
-              w="100%"
-              zIndex={'2'}
-            >
-              <Text
-                color={textColor}
-                fontWeight="600"
-                fontSize={{ base: 'sm', md: 'md' }}
-                lineHeight={{ base: '24px', md: '26px' }}
-              >
-                {inputOnSubmit}
-              </Text>
-              <Icon
-                cursor="pointer"
-                as={MdEdit}
-                ms="auto"
-                width="20px"
-                height="20px"
-                color={gray}
-              />
-            </Flex>
           </Flex>
           <Flex w="100%">
+            <MessageBoxChat output={outputCode} />
             <Flex
               borderRadius="full"
               justify="center"
@@ -347,6 +366,8 @@ export default function Chat(props: { apiKeyApp: string }) {
               h="40px"
               minH="40px"
               minW="40px"
+              marginTop="5px"
+              marginLeft={"7px"}
             >
               <Icon
                 as={MdAutoAwesome}
@@ -355,31 +376,16 @@ export default function Chat(props: { apiKeyApp: string }) {
                 color="white"
               />
             </Flex>
-            <MessageBoxChat output={outputCode} />
           </Flex>
         </Flex>
         {/* Chat Input */}
         <Flex
-          ms={{ base: '0px', xl: '60px' }}
+          ms={{ base: '0px', xl: '10px' }}
+          paddingRight={"50px"}
           mt="20px"
           justifySelf={'flex-end'}
+          height="auto"
         >
-          <Input
-            minH="54px"
-            h="100%"
-            border="1px solid"
-            borderColor={borderColor}
-            borderRadius="45px"
-            p="15px 20px"
-            me="10px"
-            fontSize="sm"
-            fontWeight="500"
-            _focus={{ borderColor: 'none' }}
-            color={inputColor}
-            _placeholder={placeholderColor}
-            placeholder="Type your message here..."
-            onChange={handleChange}
-          />
           <Button
             variant="primary"
             py="20px"
@@ -398,11 +404,32 @@ export default function Chat(props: { apiKeyApp: string }) {
                 bg: 'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%)',
               },
             }}
+            marginRight="14px"
             onClick={handleTranslate}
             isLoading={loading ? true : false}
           >
             Submit
           </Button>
+          <Textarea
+            minH="54px"
+            maxH={"auto"}
+            border="1px solid"
+            borderColor={borderColor}
+            borderRadius="45px"
+            p="15px 20px"
+            me="10px"
+            fontSize="medium"
+            fontWeight="500"
+            _focus={{ borderColor: 'none' }}
+            color={inputColor}
+            _placeholder={placeholderColor}
+            placeholder="قــول اللي جواك"
+            onChange={handleChange}
+            textAlign="right"
+            onInput={handleInputResize}
+            overflow="hidden"
+          />
+          
         </Flex>
 
         <Flex
@@ -411,11 +438,10 @@ export default function Chat(props: { apiKeyApp: string }) {
           direction={{ base: 'column', md: 'row' }}
           alignItems="center"
         >
-          <Text fontSize="xs" textAlign="center" color={gray}>
-            Free Research Preview. ChatGPT may produce inaccurate information
-            about people, places, or facts.
+          <Text fontSize="xs" textAlign="center" color={gray} paddingLeft="40px">
+            Developed by Al-Qalam Team 
           </Text>
-          <Link href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">
+          {/* <Link href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">
             <Text
               fontSize="xs"
               color={textColor}
@@ -424,7 +450,7 @@ export default function Chat(props: { apiKeyApp: string }) {
             >
               ChatGPT May 12 Version
             </Text>
-          </Link>
+          </Link> */}
         </Flex>
       </Flex>
     </Flex>
