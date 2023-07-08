@@ -1,9 +1,10 @@
 'use client';
 /*eslint-disable*/
-
 import Link from '@/components/link/Link';
 import MessageBoxChat from '@/components/MessageBox';
 import { ChatBody, OpenAIModel } from '@/types/types';
+import styles from './index.module.css'
+
 import {
   Accordion,
   AccordionButton,
@@ -67,19 +68,19 @@ export default function Chat(props: { apiKeyApp: string }) {
     const maxCodeLength = model === 'gpt-3.5-turbo' ? 700 : 700;
 
     if (!apiKeyApp?.includes('sk-') && !apiKey?.includes('sk-')) {
-      alert('Please enter an API key.');
+      // alert('Please enter an API key.');
       return;
     }
 
     if (!inputCode) {
-      alert('Please enter your message.');
+      // alert('Please enter your message.');
       return;
     }
 
     if (inputCode.length > maxCodeLength) {
-      alert(
-        `Please enter code less than ${maxCodeLength} characters. You are currently at ${inputCode.length} characters.`,
-      );
+      // alert(
+      //   `Please enter code less than ${maxCodeLength} characters. You are currently at ${inputCode.length} characters.`,
+      // );
       return;
     }
     setOutputCode(' ');
@@ -104,9 +105,11 @@ export default function Chat(props: { apiKeyApp: string }) {
     if (!response.ok) {
       setLoading(false);
       if (response) {
-        alert(
-          'Something went wrong went fetching from the API. Make sure to use a valid API key.',
-        );
+        // alert(
+        //   'Something went wrong went fetching from the API. Make sure to use a valid API key.',
+        // );
+         setLoading(true);
+
       }
       return;
     }
@@ -408,7 +411,7 @@ export default function Chat(props: { apiKeyApp: string }) {
             onClick={handleTranslate}
             isLoading={loading ? true : false}
           >
-            Submit
+            من الآخر
           </Button>
           <Textarea
             minH="54px"
@@ -423,11 +426,12 @@ export default function Chat(props: { apiKeyApp: string }) {
             _focus={{ borderColor: 'none' }}
             color={inputColor}
             _placeholder={placeholderColor}
-            placeholder="قــول اللي جواك"
+            placeholder="...أدخل النص الذي ترغب في تلخيصه"
             onChange={handleChange}
             textAlign="right"
             onInput={handleInputResize}
             overflow="hidden"
+            fontFamily='Alexandria'
           />
           
         </Flex>

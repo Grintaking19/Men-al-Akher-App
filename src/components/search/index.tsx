@@ -7,6 +7,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+import styles from "./index.module.css"
 export function SearchBar(props: {
   variant?: string;
   children?: JSX.Element;
@@ -62,6 +63,7 @@ export function SearchBar(props: {
           '2xl': '860px',
           '3xl': '860px',
         }}
+        fontFamily={styles["Hacen-Liner"]}
         maxW="100%"
         variant="search"
         fontSize="sm"
