@@ -330,10 +330,10 @@ export default function Chat(props: { apiKeyApp: string }) {
               border="1px solid"
               borderColor={borderColor}
               borderRadius="14px"
-              maxW={"100%"}
+              w="951px"
               zIndex={'2'}
-              justifyContent="right"
-              padding={"20px"}
+              
+              
             >
               {/* <Icon
                 cursor="pointer"
@@ -351,7 +351,7 @@ export default function Chat(props: { apiKeyApp: string }) {
                 maxW="100%"
                 textAlign={"right"}
                 fontFamily='Alexandria'
-
+                padding={"20px"}
                  
               >
                 {inputOnSubmit}
