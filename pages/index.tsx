@@ -173,7 +173,7 @@ export default function Chat(props: { apiKeyApp: string }) {
       direction="column"
       position="relative"
     >
-      <Img
+      {/* <Img
         src={Bg.src}
         position={'absolute'}
         w="350px"
@@ -181,7 +181,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         top="50%"
         transform={'translate(-50%, -50%)'}
         zIndex="-1"
-      />
+      /> */}
       <Flex
         direction="column"
         mx="auto"
