@@ -47,7 +47,7 @@ export default function MessageBox(props: { output: string }) {
 
     >
       
-      <Flex
+      <Text
         textAlign="right"
         fontFamily={'Alexandria'}
         
