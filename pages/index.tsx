@@ -304,38 +304,6 @@ export default function Chat(props: { apiKeyApp: string }) {
           mb={'auto'}
         >
           <Flex w="100%" align={''} mb="10px">
-            
-            <Flex
-              p="22px"
-              border="1px solid"
-              borderColor={borderColor}
-              borderRadius="14px"
-              w="934px"
-              zIndex={'2'}
-              justifyContent="right"
-            >
-              {/* <Icon
-                cursor="pointer"
-                as={MdEdit}
-                ms="auto"
-                width="20px"
-                height="20px"
-                color={gray}
-              /> */}
-              <Text
-                color={textColor}
-                fontWeight="600"
-                fontSize={{ base: 'sm', md: 'md' }}
-                lineHeight={{ base: '24px', md: '26px' }}
-                maxW="100%"
-                textAlign={"right"}
-                
-              >
-                {inputOnSubmit}
-              </Text>
-              
-            </Flex>
-
             <Flex
               borderRadius="full"
               justify="center"
@@ -357,9 +325,43 @@ export default function Chat(props: { apiKeyApp: string }) {
                 color={brandColor}
               />
             </Flex>
+            <Flex
+             
+              border="1px solid"
+              borderColor={borderColor}
+              borderRadius="14px"
+              maxW={"100%"}
+              zIndex={'2'}
+              justifyContent="right"
+              padding={"20px"}
+            >
+              {/* <Icon
+                cursor="pointer"
+                as={MdEdit}
+                ms="auto"
+                width="20px"
+                height="20px"
+                color={gray}
+              /> */}
+              <Text
+                color={textColor}
+                fontWeight="600"
+                fontSize={{ base: 'sm', md: 'md' }}
+                lineHeight={{ base: '24px', md: '26px' }}
+                maxW="100%"
+                textAlign={"right"}
+                fontFamily='Alexandria'
+
+                 
+              >
+                {inputOnSubmit}
+              </Text>
+            
+              
+          </Flex>
+
           </Flex>
           <Flex w="100%">
-            <MessageBoxChat output={outputCode} />
             <Flex
               borderRadius="full"
               justify="center"
@@ -379,6 +381,7 @@ export default function Chat(props: { apiKeyApp: string }) {
                 color="white"
               />
             </Flex>
+            <MessageBoxChat output={outputCode} />
           </Flex>
         </Flex>
         {/* Chat Input */}
@@ -389,6 +392,27 @@ export default function Chat(props: { apiKeyApp: string }) {
           justifySelf={'flex-end'}
           height="auto"
         >
+          
+          <Textarea
+            minH="54px"
+            maxH={"auto"}
+            border="1px solid"
+            borderColor={borderColor}
+            borderRadius="45px"
+            p="15px 20px"
+            me="10px"
+            fontSize="medium"
+            fontWeight="300"
+            _focus={{ borderColor: 'none' }}
+            color={inputColor}
+            _placeholder={placeholderColor}
+            placeholder="أدخل النص الذي ترغب في تلخيصه..."
+            onChange={handleChange}
+            textAlign="right"
+            onInput={handleInputResize}
+            overflow="hidden"
+            fontFamily='Alexandria'
+          />
           <Button
             variant="primary"
             py="20px"
@@ -407,32 +431,12 @@ export default function Chat(props: { apiKeyApp: string }) {
                 bg: 'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%)',
               },
             }}
-            marginRight="14px"
+            
             onClick={handleTranslate}
             isLoading={loading ? true : false}
           >
             من الآخر
           </Button>
-          <Textarea
-            minH="54px"
-            maxH={"auto"}
-            border="1px solid"
-            borderColor={borderColor}
-            borderRadius="45px"
-            p="15px 20px"
-            me="10px"
-            fontSize="medium"
-            fontWeight="500"
-            _focus={{ borderColor: 'none' }}
-            color={inputColor}
-            _placeholder={placeholderColor}
-            placeholder="...أدخل النص الذي ترغب في تلخيصه"
-            onChange={handleChange}
-            textAlign="right"
-            onInput={handleInputResize}
-            overflow="hidden"
-            fontFamily='Alexandria'
-          />
           
         </Flex>
 
@@ -442,8 +446,8 @@ export default function Chat(props: { apiKeyApp: string }) {
           direction={{ base: 'column', md: 'row' }}
           alignItems="center"
         >
-          <Text fontSize="xs" textAlign="center" color={gray} paddingLeft="40px">
-            Developed by Al-Qalam Team 
+          <Text fontSize="xs" textAlign="center" color={gray} paddingLeft="40px" fontFamily={'Alexandria'}>
+            تم تطويره بواسطة فريق القلم 
           </Text>
           {/* <Link href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">
             <Text

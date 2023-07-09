@@ -1,0 +1,21 @@
+
+.cursor {
+  display: inline-block;
+  width: 0.8ch;
+  height: 1.2em;
+  animation: flicker 1s infinite;
+  background-color:rgb(46, 39, 56);
+  direction: rtl;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
