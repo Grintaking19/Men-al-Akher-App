@@ -5,9 +5,10 @@ import {
   InputGroup,
   InputLeftElement,
   useColorModeValue,
+  Image,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import styles from "./SearchBar.module.css"
+// import styles from "./SearchBar.module.css"
 export function SearchBar(props: {
   variant?: string;
   background?: string;
@@ -59,6 +60,8 @@ export function SearchBar(props: {
         fontFamily='Alexandria'
         textAlign={"right"}
       />
+
     </InputGroup>
+    
   );
 }

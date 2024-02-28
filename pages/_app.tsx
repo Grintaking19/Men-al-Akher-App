@@ -16,7 +16,7 @@ import '@/styles/MiniCalendar.css';
 
 function App({ Component, pageProps }: AppProps<{}>) {
   const pathname = usePathname();
-  const [apiKey, setApiKey] = useState('');
+  const [apiKey, setApiKey] = useState('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');
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     const initialKey = localStorage.getItem('apiKey');

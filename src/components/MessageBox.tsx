@@ -52,7 +52,7 @@ export default function MessageBox(props: { output: string }) {
         fontFamily={'Alexandria'}
         
       >
-        <span className={styles['men-al-akher']}> من الآخـر: </span>
+        <span className={styles['men-al-akher']}> مِشَكِّــلاتي: </span>
          {displayResponse}
           {!completedTyping && <CursorSVG />}
       

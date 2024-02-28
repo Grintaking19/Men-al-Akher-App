@@ -3,7 +3,7 @@
 import Link from '@/components/link/Link';
 import MessageBoxChat from '@/components/MessageBox';
 import { ChatBody, OpenAIModel } from '@/types/types';
-import styles from './index.module.css'
+import styles from './index.module.css';
 
 import {
   Accordion,
@@ -24,7 +24,7 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
-import Bg from '../public/img/chat/bg-image.png';
+import Bg from '../public/img/Meshakkelaty-logo.png';
 
 export default function Chat(props: { apiKeyApp: string }) {
   // *** If you use .env.local variable for your API key, method which we recommend, use the apiKey variable commented below
@@ -108,8 +108,8 @@ export default function Chat(props: { apiKeyApp: string }) {
         // alert(
         //   'Something went wrong went fetching from the API. Make sure to use a valid API key.',
         // );
-         setLoading(true);
-
+        
+        setLoading(true);
       }
       return;
     }
@@ -159,12 +159,10 @@ export default function Chat(props: { apiKeyApp: string }) {
     setInputCode(Event.target.value);
   };
 
-
   const handleInputResize = (Event: any) => {
     Event.target.style.height = 'auto';
     Event.target.style.height = Event.target.scrollHeight + 'px';
-  }
-
+  };
 
   return (
     <Flex
@@ -173,15 +171,17 @@ export default function Chat(props: { apiKeyApp: string }) {
       direction="column"
       position="relative"
     >
-      {/* <Img
-        src={Bg.src}
-        position={'absolute'}
-        w="350px"
-        left="50%"
-        top="50%"
-        transform={'translate(-50%, -50%)'}
-        zIndex="-1"
-      /> */}
+      <Flex alignContent={'center'} justify={'center'}>
+        <Img
+          src={Bg.src}
+          // position={'absolute'}
+          w="350px"
+          // left="50%"
+          // top="50%"
+          // transform={'translate(-50%, -50%)'}
+          // zIndex="-1"
+        />
+      </Flex>
       <Flex
         direction="column"
         mx="auto"
@@ -316,7 +316,7 @@ export default function Chat(props: { apiKeyApp: string }) {
               minH="40px"
               minW="40px"
               marginTop="5px"
-              marginLeft={"7px"}
+              marginLeft={'7px'}
             >
               <Icon
                 as={MdPerson}
@@ -326,14 +326,11 @@ export default function Chat(props: { apiKeyApp: string }) {
               />
             </Flex>
             <Flex
-             
               border="1px solid"
               borderColor={borderColor}
               borderRadius="14px"
               w="951px"
               zIndex={'2'}
-              
-              
             >
               {/* <Icon
                 cursor="pointer"
@@ -349,30 +346,26 @@ export default function Chat(props: { apiKeyApp: string }) {
                 fontSize={{ base: 'sm', md: 'md' }}
                 lineHeight={{ base: '24px', md: '26px' }}
                 maxW="100%"
-                textAlign={"right"}
-                fontFamily='Alexandria'
-                padding={"20px"}
-                 
+                textAlign={'right'}
+                fontFamily="Alexandria"
+                padding={'20px'}
               >
                 {inputOnSubmit}
               </Text>
-            
-              
-          </Flex>
-
+            </Flex>
           </Flex>
           <Flex w="100%">
             <Flex
               borderRadius="full"
               justify="center"
               align="center"
-              bg={'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%)'}
+              bg={'linear-gradient(15.46deg, #64B3F4 26.3%, #7B5AFF 86.4%)'}
               me="20px"
               h="40px"
               minH="40px"
               minW="40px"
               marginTop="5px"
-              marginLeft={"7px"}
+              marginLeft={'7px'}
             >
               <Icon
                 as={MdAutoAwesome}
@@ -387,15 +380,14 @@ export default function Chat(props: { apiKeyApp: string }) {
         {/* Chat Input */}
         <Flex
           ms={{ base: '0px', xl: '10px' }}
-          paddingRight={"50px"}
+          paddingRight={'50px'}
           mt="20px"
           justifySelf={'flex-end'}
           height="auto"
         >
-          
           <Textarea
             minH="54px"
-            maxH={"auto"}
+            maxH={'auto'}
             border="1px solid"
             borderColor={borderColor}
             borderRadius="45px"
@@ -406,15 +398,17 @@ export default function Chat(props: { apiKeyApp: string }) {
             _focus={{ borderColor: 'none' }}
             color={inputColor}
             _placeholder={placeholderColor}
-            placeholder="أدخل النص الذي ترغب في تلخيصه..."
+            placeholder="أدخل النص الذي ترغب في تشكيله ....."
             onChange={handleChange}
             textAlign="right"
             onInput={handleInputResize}
             overflow="hidden"
-            fontFamily='Alexandria'
+            fontFamily="Alexandria"
           />
           <Button
             variant="primary"
+            // bg={'#6db5ec'}
+            bg="linear-gradient(15.46deg, #64B3F4 26.3%, #96BFC8 86.4%)"
             py="20px"
             px="16px"
             fontSize="sm"
@@ -424,20 +418,18 @@ export default function Chat(props: { apiKeyApp: string }) {
             h="54px"
             _hover={{
               boxShadow:
-                '0px 21px 27px -10px rgba(96, 60, 255, 0.48) !important',
-              bg:
-                'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%) !important',
+                '0px 21px 27px -10px rgba(150, 191, 200, 0.38) !important',
+              bg: 'linear-gradient(15.46deg, #64B3F4 26.3%, #96BFC8 86.4%) !important',
               _disabled: {
-                bg: 'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%)',
+                bg: 'linear-gradient(15.46deg, #64B3F4 26.3%, #96BFC8 86.4%)',
               },
             }}
-            
             onClick={handleTranslate}
             isLoading={loading ? true : false}
+            // fontStyle="italic"
           >
-            من الآخر
+            مِشَكِّــلاتي
           </Button>
-          
         </Flex>
 
         <Flex
@@ -446,19 +438,15 @@ export default function Chat(props: { apiKeyApp: string }) {
           direction={{ base: 'column', md: 'row' }}
           alignItems="center"
         >
-          <Text fontSize="xs" textAlign="center" color={gray} paddingLeft="40px" fontFamily={'Alexandria'}>
-            تم تطويره بواسطة فريق القلم 
+          <Text
+            fontSize="xs"
+            textAlign="center"
+            color={gray}
+            paddingLeft="40px"
+            fontFamily={'Alexandria'}
+          >
+            تم تطويره بواسطة فريق القلم
           </Text>
-          {/* <Link href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">
-            <Text
-              fontSize="xs"
-              color={textColor}
-              fontWeight="500"
-              textDecoration="underline"
-            >
-              ChatGPT May 12 Version
-            </Text>
-          </Link> */}
         </Flex>
       </Flex>
     </Flex>

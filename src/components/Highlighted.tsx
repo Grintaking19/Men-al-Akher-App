@@ -5,9 +5,5 @@ export default function Highlighted() {
   useEffect(() => { 
     setInterval(() => { }, 1000);
   }, []);
-  return (
-    <Text fontWeight={500}>
-       من الآخـر: 
-      </Text>
-  );
+  return <Text fontWeight={500}>مِشَكِّــلاتي:</Text>;
 }
