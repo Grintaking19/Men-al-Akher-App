@@ -83,7 +83,7 @@ export const globalStyles = {
       500: '#1b3bbb',
       600: '#24388a',
       700: '#1B254B',
-      800: '#342B34',
+      800: '#342B44',
       900: '#2A1A27',
     },
     gray: {
@@ -92,16 +92,25 @@ export const globalStyles = {
   },
   styles: {
     global: (props: any) => ({
+      FontFace: {
+        fontFamily: 'Hacen-Casablanca',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontDisplay: 'swap',
+        src: `
+          url('../../public/fonts/Hacen-Casablanca.ttf') format('truetype'),
+        `,
+      },
       body: {
         overflowX: 'hidden',
         bg: mode('#fdfeff', 'navy.900')(props),
-        fontFamily: 'Alexandria',
+        fontFamily: 'Hacen-Casablanca',
       },
       input: {
         color: 'gray.700',
       },
       html: {
-        fontFamily: 'Alexandria',
+        fontFamily: 'Hacen-Casablanca',
       },
     }),
   },

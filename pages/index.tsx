@@ -108,7 +108,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         // alert(
         //   'Something went wrong went fetching from the API. Make sure to use a valid API key.',
         // );
-        
+
         setLoading(true);
       }
       return;
@@ -393,7 +393,7 @@ export default function Chat(props: { apiKeyApp: string }) {
             borderRadius="45px"
             p="15px 20px"
             me="10px"
-            fontSize="medium"
+            fontSize="lg"
             fontWeight="300"
             _focus={{ borderColor: 'none' }}
             color={inputColor}
@@ -403,7 +403,6 @@ export default function Chat(props: { apiKeyApp: string }) {
             textAlign="right"
             onInput={handleInputResize}
             overflow="hidden"
-            fontFamily="Alexandria"
           />
           <Button
             variant="primary"
@@ -411,7 +410,7 @@ export default function Chat(props: { apiKeyApp: string }) {
             bg="linear-gradient(15.46deg, #64B3F4 26.3%, #96BFC8 86.4%)"
             py="20px"
             px="16px"
-            fontSize="sm"
+            fontSize="xl"
             borderRadius="45px"
             ms="auto"
             w={{ base: '160px', md: '210px' }}
@@ -440,11 +439,10 @@ export default function Chat(props: { apiKeyApp: string }) {
           alignItems="center"
         >
           <Text
-            fontSize="xs"
+            fontSize="lg"
             textAlign="center"
             color={gray}
             paddingLeft="40px"
-            fontFamily={'Alexandria'}
           >
             تم تطويره بواسطة فريق القلم
           </Text>
