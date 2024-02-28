@@ -52,6 +52,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
                 logoText={'Horizon UI Dashboard PRO'}
                 brandText={getActiveRoute(routes, pathname)}
                 secondary={getActiveNavbar(routes, pathname)}
+                
               />
             </Box>
           </Portal>

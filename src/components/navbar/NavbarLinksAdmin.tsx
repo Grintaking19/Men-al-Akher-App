@@ -35,8 +35,8 @@ export default function HeaderLinks(props: {
   const textColor = useColorModeValue('navy.700', 'white');
   const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)');
   const shadow = useColorModeValue(
-    '14px 17px 40px 4px rgba(112, 144, 176, 0.18)',
-    '0px 41px 75px #081132',
+    '14px 17px 40px 4px rgb(42, 26, 39, 0.18)',
+    '0px 41px 75px #2A1A27',
   );
   const buttonBg = useColorModeValue('transparent', 'navy.800');
   const hoverButton = useColorModeValue(

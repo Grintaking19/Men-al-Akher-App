@@ -44,20 +44,15 @@ export default function MessageBox(props: { output: string }) {
       lineHeight={{ base: '24px', md: '26px' }}
       fontWeight="300"
       fontFamily="Alexandria"
-
+      backgroundColor={useColorModeValue('white', 'navy.900')}
+      border="1px solid"
+      borderColor={useColorModeValue('gray.200', 'whiteAlpha.100')}
     >
-      
-      <Text
-        textAlign="right"
-        fontFamily={'Alexandria'}
-        
-      >
+      <Text textAlign="right" fontFamily={'Alexandria'}>
         <span className={styles['men-al-akher']}> مِشَكِّــلاتي: </span>
-         {displayResponse}
-          {!completedTyping && <CursorSVG />}
-      
+        {displayResponse}
+        {!completedTyping && <CursorSVG />}
       </Text>
-        
     </Card>
-  )
+  );
 }

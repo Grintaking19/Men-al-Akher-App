@@ -427,6 +427,7 @@ export default function Chat(props: { apiKeyApp: string }) {
             onClick={handleTranslate}
             isLoading={loading ? true : false}
             // fontStyle="italic"
+            color="#2A1A51"
           >
             مِشَكِّــلاتي
           </Button>
